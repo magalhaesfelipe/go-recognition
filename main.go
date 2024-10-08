@@ -41,13 +41,25 @@ func mySlices() {
 
 	//s := make([]int, 5) // creates a slice with length 5 and capacity 5, initialized with zero values
 
-	//t := make([]int, 5, 10) // slice with length 5 and capacity 10
+	// t := make([]int, 5, 10) // slice with length 5 and capacity 10
 
 
 // Slicing an Array
-arr := [5]int{1, 80, 30, 400, 5}
-slice := arr[1:4] // creates a slice from elements arr[1] to arr[3], i.e., [80, 30, 400]
+// arr := [5]int{1, 80, 30, 400, 5}
+// slice := arr[1:4] // creates a slice from elements arr[1] to arr[3], i.e., [80, 30, 400]
 
-fmt.Println(slice)
+// Using a Slice Literal
+ //s := []int{1, 2, 3, 4, 5} // Creates a slice with elements 1 to 5 
+
+
+g := []int{49, 7, 3}
+g = append(g, 200, 10000)
+
+sliceTwo := g[1:4]
+
+fmt.Println(sliceTwo)
+fmt.Println(len(sliceTwo))
+fmt.Println(cap(sliceTwo))
+
 
 }
