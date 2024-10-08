@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	sliceThree()
+ mapping()
 }
 
 func x() {
@@ -43,34 +43,31 @@ func mySlices() {
 
 	// t := make([]int, 5, 10) // slice with length 5 and capacity 10
 
+	// Slicing an Array
+	// arr := [5]int{1, 80, 30, 400, 5}
+	// slice := arr[1:4] // creates a slice from elements arr[1] to arr[3], i.e., [80, 30, 400]
 
-// Slicing an Array
-// arr := [5]int{1, 80, 30, 400, 5}
-// slice := arr[1:4] // creates a slice from elements arr[1] to arr[3], i.e., [80, 30, 400]
+	// Using a Slice Literal
+	//s := []int{1, 2, 3, 4, 5} // Creates a slice with elements 1 to 5
 
-// Using a Slice Literal
- //s := []int{1, 2, 3, 4, 5} // Creates a slice with elements 1 to 5 
+	g := []int{49, 7, 3}
+	g = append(g, 200, 10000)
 
+	sliceTwo := g[1:4]
 
-g := []int{49, 7, 3}
-g = append(g, 200, 10000)
+	destination := make([]int, len(sliceTwo)) // Create a slice with the same length(3)
+	copy(destination, sliceTwo)               // Copy elements from 'sliceTwo' to 'destination'
 
-sliceTwo := g[1:4]
-
-destination := make([]int, len(sliceTwo)) // Create a slice with the same length(3)
-copy(destination, sliceTwo)  // Copy elements from 'sliceTwo' to 'destination'
-
-fmt.Println(sliceTwo)
-fmt.Println(len(sliceTwo))
-fmt.Println(cap(sliceTwo))
-
+	fmt.Println(sliceTwo)
+	fmt.Println(len(sliceTwo))
+	fmt.Println(cap(sliceTwo))
 
 }
 
 func sliceThree() {
 	// Create a slice using a literal
 	numbers := []int{1, 2, 3, 4, 5}
-	
+
 	// Get the length and capacity
 	var sliceLength = len(numbers)
 	var sliceCapacity = cap(numbers)
@@ -89,7 +86,26 @@ func sliceThree() {
 	// Copy slice
 	copySlice := make([]int, len(numbers))
 	copy(copySlice, numbers)
-	fmt.Println("Copy of slice:", copySlice) 
+	fmt.Println("Copy of slice:", copySlice)
 
+}
+
+func mapping() {
+	map1 := make(map[string]string)
+	map1["name"] = "Felipe"
+	map1["last name"] = "Magalhaes"
+
+	map2 := map[string]int{"a": 1, "b": 2}
+
+	someValue := map2["c"]
+
+	fmt.Println(someValue)
+
+	value, ok := map1["last name"]
+	if ok {
+		fmt.Println("Key exists with value:", value)
+	} else {
+		fmt.Println("Key does not exist")
+	}
 
 }
