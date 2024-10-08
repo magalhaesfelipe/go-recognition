@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	mySlices()
+	sliceThree()
 }
 
 func x() {
@@ -57,9 +57,39 @@ g = append(g, 200, 10000)
 
 sliceTwo := g[1:4]
 
+destination := make([]int, len(sliceTwo)) // Create a slice with the same length(3)
+copy(destination, sliceTwo)  // Copy elements from 'sliceTwo' to 'destination'
+
 fmt.Println(sliceTwo)
 fmt.Println(len(sliceTwo))
 fmt.Println(cap(sliceTwo))
+
+
+}
+
+func sliceThree() {
+	// Create a slice using a literal
+	numbers := []int{1, 2, 3, 4, 5}
+	
+	// Get the length and capacity
+	var sliceLength = len(numbers)
+	var sliceCapacity = cap(numbers)
+
+	fmt.Println("Length:", sliceLength)
+	fmt.Println("Capacity:", sliceCapacity)
+
+	// Append a new element to the slice
+	numbers = append(numbers, 900)
+	fmt.Println("After appending:", numbers)
+
+	// Slice the slice
+	subSlice := numbers[2:4]
+	fmt.Println("Subslice:", subSlice) // Output are the values of the positions 2 and 3, before 4, so 3, 4
+
+	// Copy slice
+	copySlice := make([]int, len(numbers))
+	copy(copySlice, numbers)
+	fmt.Println("Copy of slice:", copySlice) 
 
 
 }
