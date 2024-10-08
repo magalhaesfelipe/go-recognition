@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	myArrays()
+	mySlices()
 }
 
 func x() {
@@ -35,4 +35,19 @@ func myArrays() {
 	one[4] = 49
 
 	fmt.Println(one)
+}
+
+func mySlices() {
+
+	//s := make([]int, 5) // creates a slice with length 5 and capacity 5, initialized with zero values
+
+	//t := make([]int, 5, 10) // slice with length 5 and capacity 10
+
+
+// Slicing an Array
+arr := [5]int{1, 80, 30, 400, 5}
+slice := arr[1:4] // creates a slice from elements arr[1] to arr[3], i.e., [80, 30, 400]
+
+fmt.Println(slice)
+
 }
