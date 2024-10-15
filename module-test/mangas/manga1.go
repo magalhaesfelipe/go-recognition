@@ -1,4 +1,4 @@
-package main
+package mangas
 
 import (
 	"fmt"
@@ -14,6 +14,9 @@ type Manga struct {
 	OriginalLanguage string
 }
 
+// global variable
+var MiddleName string = "Shippuden"
+
 func x() {
 	manga1 := Manga{
 		Name:             "Naruto",
@@ -26,7 +29,6 @@ func x() {
 }
 
 // Function available outside this package
-func printMyName(name string) {
-	fmt.Println("My printed name is:", name)
-	fmt.Println(MiddleName)
+func PrintMyManga(name string) {
+	fmt.Println("My printed manga is:", name)
 }
