@@ -20,7 +20,9 @@ func main() {
 	
 	str, num := third()
 	
-	fmt.Println(str, num)
+	fmt.Println("This is the string: ", str)
+	fmt.Println("This is the int: ", num)
+
 }
 
 func saySomething(phrase1 string) float64 {
@@ -34,5 +36,5 @@ func saySomething(phrase1 string) float64 {
 
 
 func third() (string, int) { // the function returns two values, of different types
-	return "string and ", 1
+	return "ffffffff", 2222222
 }
