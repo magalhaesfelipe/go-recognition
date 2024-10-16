@@ -3,12 +3,16 @@ package main
 import (
 	"fmt"
 	"time"
-	"module-test/other"
-	"module-test/mangas"
-
+	"types-and-structs/other"
+	"types-and-structs/mangas"
+	"types-and-structs/structs"
 )
 
 func main() {
+
+	structs.Whatever()
+
+
 	var manga1 mangas.Manga = mangas.Manga{
 		Name:             "Naruto",
 		Author:           "Masashi",
@@ -16,7 +20,7 @@ func main() {
 		Released:         time.Now(),
 		OriginalLanguage: "Japanese",
 	}
-	fmt.Println(manga1)
+	fmt.Println(manga1.Chapters, manga1.Author)
 	
 	// Function from the 'mangas' package
 	mangas.PrintMyManga("Naruto")
