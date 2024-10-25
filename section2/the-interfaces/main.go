@@ -54,8 +54,8 @@ func ShowHumanHabits(h Human) {
 	fmt.Println("This human driks water: ", h.DrinkWater(), ", and Brush his teeth:", h.BrushTeeth(), h)
 }
 
-// Implementing the 'Human' interface for Mangaka type struct
-func (x *Mangaka) DrinkWater() string {
+// Implementing the 'Human' interface for Mangaka type-struct
+func (x *Mangaka) DrinkWater() string { // Passing a pointer/reference is a good practice
 	return "4 times a day"
 }
 
@@ -63,8 +63,7 @@ func (x *Mangaka) BrushTeeth() string {
 	return "2 times a day"
 }
 
-// Implementing the 'Human' interface for Programmer type struct
-
+// Implementing the 'Human' interface for Programmer type-struct
 func (*Programmer) DrinkWater() string {
 	return "7 times a day"
 }
@@ -73,7 +72,7 @@ func (*Programmer) BrushTeeth() string {
 	return "3 times a day"
 }
 
-// Implementing the 'Human' interface for Astronaut type struct
+// Implementing the 'Human' interface for Astronaut type-struct
 func (*Astronaut) DrinkWater() string {
 	return "9 time a day"
 }
