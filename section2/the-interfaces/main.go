@@ -26,6 +26,9 @@ type Astronaut struct {
 }
 
 func main() {
+	
+
+
  // Using shortcut to create the variable
 	mangaka := Mangaka{
 		Name:      "Akira Toriyama",
@@ -45,6 +48,9 @@ func main() {
 	astronaut.WorkHours = 24
 	astronaut.Home = "Space"
 
+
+	// The function now accepts 3 different types because they
+	// satisfy the interface requirements  
 	ShowHumanHabits(&mangaka)
 	ShowHumanHabits(&programmer)
 	ShowHumanHabits(&astronaut)
