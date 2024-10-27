@@ -1,6 +1,9 @@
 package main
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 // USING A TABLE TEST
 
@@ -13,26 +16,29 @@ var someTests = []struct {
 }{
 	{"valid-data", 100.0, 10.0, 10.0, false},
 	{"invalid-data", 100.0, 0.0, 0.0, true},
+	{"expect-250", 500.0, 2.0, 250.0, false},
+	{"expect-3", 9.0, 3.0, 3.0, false},
+	{"expect-2.875", -23.0, -8.0, 2.875, false},
 }
 
 func TestDivision(t *testing.T) {
 	for _, tt := range someTests {
-		got, err := divideNumbers(tt.dividend, tt.divisor)
+		divisionResult, err := divideNumbers(tt.dividend, tt.divisor)
+		fmt.Println(divisionResult)
 
+		// Check if an error was expected		
 		if tt.isErr {
-			if err == nil {
-				t.Errorf("Test %s: Expected an error but did not get one", tt.name)
-			} else {
-				if err != nil {
-					t.Errorf("Test %s: Did not expect an error but got one: %s", tt.name, err.Error())
-				}
-				if got != tt.expected {
-					t.Errorf("Test %s: Expected %f and got %f", tt.name,tt.expected, got)
-				}
-			}
+			if err == nil { // with invalid data, 'err' cannot be 'nil', so we fail the test
+				t.Errorf("Test -> %s: Expected an error but did not get one", tt.name)
+			} 
+		} else {
+				// No error expected
+				if err != nil { // with valid data, 'err' must be 'nil', so we fail the test
+					t.Errorf("Test -> %s: Did not expect an error but got one: %s", tt.name, err.Error())
+					} else if divisionResult != tt.expected { // Only check result if no error
+					t.Errorf("Test -> %s: Expected %f and got %f", tt.name, tt.expected, divisionResult)
+			  } 
 		}
-
-
 	}
 }
 
@@ -48,7 +54,7 @@ func TestDivision(t *testing.T) {
 // 	}
 // }
 
-// // TESTING FOR A INVALID DIVISION
+// // TESTING FOR AN INVALID DIVISION
 // func TestInvalidDivision(t *testing.T) {
 // 	_, err := divideNumbers(2, 0)
 // 	if err == nil {

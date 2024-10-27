@@ -13,7 +13,7 @@ func main() {
 		return
 	}
 
-	fmt.Println("Result of your division is:", result)
+	fmt.Println("The result of your division is:", result)
 }
 
 func divideNumbers(x, y float32) (float32, error) {
