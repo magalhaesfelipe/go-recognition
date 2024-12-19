@@ -3,5 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("The world is yours..")
+	var x int = 20
+	fmt.Println(x)
 }
